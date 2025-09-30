@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SpaceReclaim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2563eb',
+              secondary: '#1e40af',
+              accent: '#3b82f6',
+              dark: '#1f2937',
+              light: '#f3f4f6',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-sans antialiased text-dark">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <i data-feather="box" class="h-8 w-8 text-primary"></i>
+            <span class="ml-2 text-xl font-bold text-dark">Gabrage Cleaner</span>
+</div>
+        </div>
+        <div class="hidden md:ml-极 md:flex md:items-center md:space-x-8">
+          <a href="index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Accueil</a>
+          <a href="tarif.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Tarifs</a>
+          <a href="contact.html" class="text-primary border-b-2 border-primary px-3 py-2 text-sm font-medium">Contact</a>
+          <a href="#" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">Devis Gratuit</a>
+        </div>
+        <div class="-mr-2 flex items-center md:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+        <a href="tarif.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Tarifs</a>
+        <a href="contact.html" class="text-primary block px-3 py-2 rounded-md text-base font极">Contact</a>
+        <a href="#" class="bg-primary text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary">Devis Gratuit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <div class="bg-light py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-dark">Contactez-nous</h1>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Une question ? Un projet ? Nous sommes à votre écoute</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <h2 class="text-2xl font-bold text-dark mb-6">Envoyez-nous un message</h2>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                <input type="text" id="first-name" name="first-name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
+                <input type="text" id="last-name" name="last-name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
+              <input type="tel" id="phone" name="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary font-medium">
+                Envoyer le message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-8">
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-dark mb-6">Nos coordonnées</h2>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i data-feather="phone" class="w-6 h-6 text-primary mr-4"></i>
+                <div>
+                  <p class="font-medium text-dark">Téléphone</p>
+                  <p class="text-gray-600">01 23 45 67 89</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i data-feather="mail" class="w-6 h-6 text-primary mr-4"></i>
+                <div>
+                  <p class="font-medium text-dark">Email</p>
+                  <p class="text-gray-600">contact@spacereclaim.fr</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i data-feather="map-pin" class="w-6 h-6 text-primary mr-4"></i>
+                <div>
+                  <p class="font-medium text-dark">Zone d'intervention</p>
+                  <p class="text-gray-600">Paris et Île-de-France</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i data-feather="clock" class="w-6 h-6 text-primary mr-4"></i>
+                <div>
+                  <p class="font-medium text-dark">Horaires</p>
+                  <p class="text-gray-600">Lun-Ven: 8h-18h<br>Sam: 9h-12h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-dark mb-6">Besoin d'un devis ?</h2>
+            <p class="text-gray-600 mb-6">Obtenez une estimation gratuite de votre projet en moins de 24h</p>
+            <a href="#" class="bg-primary text-white py-3 px-6 rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary font-medium inline-block">
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">SpaceReclaim</h3>
+          <p class="text-gray-400">Libérateurs d'espaces depuis 2023. Professionnels du débarras, nettoyage et revalorisation.</p>
+<div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Informations</h3>
+          <ul class="space-y-2">
+            <li><a href="tarif.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+              <span>01 23 45 67 89</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+              <span>contact@spacereclaim.fr</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+              <span>Paris & Île-de-France</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-800">
+        <p class="text-gray-400 text-sm text-center">© 2023 Gabrage Cleaner. Tous droits réservés.</p>
+</div>
+    </极>
+  </footer>
+
+  <script>feather.replace();</script>
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

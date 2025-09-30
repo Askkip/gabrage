@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceReclaim - Libérateurs d'Espaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2563eb',
+              secondary: '#1e40af',
+              accent: '#3b82f6',
+              dark: '#1f2937',
+              light: '#f3f4f6',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, rgba(37,99,235,0.9) 0%, rgba(30,64,175,0.9) 100%);
+      }
+      /* Aspect ratio 9:16 (portrait) for hero slider to avoid cropping */
+      .aspect-9-16 {
+        position: relative;
+        width: 100%;
+        padding-top: calc(16 / 9 * 100%);
+      }
+      .ap-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* show full image without cropping */
+        transition: opacity 0.7s ease;
+        opacity: 0;
+        background: #000; /* letterbox background for portrait images */
+      }
+      .how-it-works-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .testimonial-card {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <i data-feather="box" class="h-8 w-8 text-primary"></i>
+            <span class="ml-2 text-xl font-bold text-dark">Gabrage Cleaner</span>
+</div>
+        </div>
+        <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+          <a href="index.html" class="text-primary border-b-2 border-primary px-3 py-2 text-sm font-medium">Accueil</a>
+          <a href="tarif.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Tarifs</a>
+          <a href="contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+          <a href="#" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">Devis Gratuit</a>
+        </div>
+        <div class="-mr-2 flex items-center md:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+        <a href="tarif.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Tarifs</a>
+        <a href="contact.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        <a href="#" class="bg-primary text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary">Devis Gratuit</a>
+      </div>
+    </div>
+</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+        <div class="mb-12 lg:mb-0">
+          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Reprenez vos espaces<br>On s'occupe du reste</h1>
+          <p class="mt-6 text-xl text-blue-100 max-w-3xl">Nous débarrassons, nettoyons, valorisons — vous gardez la valeur.</p>
+          <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#" class="bg-white text-primary px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-gray-100">Demander un devis</a>
+            <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-white hover:text-primary">Comment ça marche ?</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div id="hero-ap-slider" class="relative rounded-xl overflow-hidden shadow-2xl w-full max-w-md mx-auto">
+            <div class="aspect-9-16">
+              <!-- slides: use object-fit: contain so 9:16 images are not cropped -->
+              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (2).jpg" alt="Avant après 1">
+              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (4).jpg" alt="Avant après 2">
+              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story.jpg" alt="Avant après 3">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-30 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="bg-white text-primary px-3 py-1 rounded-full text-xs font-bold">TRANSFORMATION</span>
+              <h3 class="text-white text-xl font-bold mt-2">Garage de 12m² à Paris</h3>
+              <p class="text-blue-100">Valeur récupérée: 320€</p>
+            </div>
+            <!-- nav -->
+            <button id="hero-ap-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
+              &#10094;
+            </button>
+            <button id="hero-ap-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
+              &#10095;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <div class="bg-light py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-dark">Comment ça marche ?</h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Un processus simple et transparent pour libérer vos espaces</p>
+      </div>
+      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="how-it-works-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+            <i data-feather="clipboard"></i>
+          </div>
+          <h3 class="mt-6 text-lg font-medium text-dark">1. Estimation & Devis</h3>
+          <p class="mt-2 text-gray-600">Envoyez-nous des photos de votre espace pour une estimation gratuite et sans engagement.</p>
+        </div>
+        <div class="how-it-works-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+            <i data-feather="truck"></i>
+          </div>
+          <h3 class="mt-6 text-lg font-medium text-dark">2. Intervention & Nettoyage</h3>
+          <p class="mt-2 text-gray-600">Nos équipes interviennent pour tout débarrasser, trier et nettoyer votre espace.</p>
+        </div>
+        <div class="how-it-works-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+            <i data-feather="dollar-sign"></i>
+          </div>
+          <h3 class="mt-6 text-lg font-medium text-dark">3. Valorisation</h3>
+          <p class="mt-2 text-gray-600">Nous valorisons vos objets par la revente ou le don, et vous récupérez une partie de la valeur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-dark">Ils nous ont fait confiance</h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Découvrez ce que nos clients disent de nous</p>
+      </div>
+      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="testimonial-card p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center">
+            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/1" alt="Client 1">
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-dark">Sophie D.</h4>
+              <p class="text-gray-500">Paris 15ème</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-600">"J'ai récupéré 250€ sur la facture grâce à la revente de mes objets. Le garage est impeccable, je recommande !"</p>
+          <div class="mt-4 flex text-yellow-400">
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+          </div>
+        </div>
+        <div class="testimonial-card p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center">
+            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/2" alt="Client 2">
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-dark">Marc L.</h4>
+              <p class="text-gray-500">Boulogne-Billancourt</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-600">"Service professionnel et transparent. J'ai apprécié leur engagement pour le recyclage et les dons aux associations."</p>
+          <div class="mt-4 flex text-yellow-400">
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+          </div>
+        </div>
+        <div class="testimonial-card p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="flex items-center">
+            <img class="h-12 w-12 rounded-full" src="http://static.photos/people/200x200/3" alt="Client 3">
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-dark">Elodie T.</h4>
+              <p class="text-gray-500">Montreuil</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-600">"Ils ont transformé ma cave en 3h chrono ! J'ai pu bénéficier du crédit d'impôt pour le service de ménage."</p>
+          <div class="mt-4 flex text-yellow-400">
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold">Prêt à libérer votre espace ?</h2>
+        <p class="mt-4 max-w-2xl text-xl text-blue-100 mx-auto">Obtenez une estimation gratuite en moins de 24h</p>
+        <div class="mt-10">
+          <a href="#" class="bg-white text-primary px-8 py-3 rounded-md text-lg font-bold hover:bg-gray-100 inline-block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">SpaceReclaim</h3>
+          <p class="text-gray-400">Libérateurs d'espaces depuis 2023. Professionnels du débarras, nettoyage et revalorisation.</p>
+<div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Informations</h3>
+          <ul class="space-y-2">
+            <li><a href="tarif.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+          </ul>
+        </div>
+<div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+              <span>01 23 45 67 89</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+              <span>contact@spacereclaim.fr</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+              <span>Paris & Île-de-France</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-800">
+        <p class="text-gray-400 text-sm text-center">© 2023 Gabrage Cleaner. Tous droits réservés.</p>
+</div>
+    </div>
+  </footer>
+  <script>feather.replace();</script>
+  <script>
+    // Simple animation for how it works cards
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.how-it-works-card');
+      cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+      });
+      
+      // Mobile menu functionality
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+    // Hero Avant/Après slider (9:16) initialization
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = Array.from(document.querySelectorAll('#hero-ap-slider .ap-slide'));
+      if (!slides.length) return;
+
+      // populate src using encodeURI to handle spaces and & on local file paths
+      slides.forEach(img => {
+        const filename = img.getAttribute('data-filename');
+        if (filename) {
+          img.src = encodeURI('avantapres/' + filename.replace(/&amp;/g, '&'));
+        }
+      });
+
+      let i = 0;
+      const total = slides.length;
+      const nextBtn = document.getElementById('hero-ap-next');
+      const prevBtn = document.getElementById('hero-ap-prev');
+
+      function show(idx) {
+        slides.forEach((s, k) => s.style.opacity = k === idx ? '1' : '0');
+        i = idx;
+      }
+
+      nextBtn && nextBtn.addEventListener('click', () => show((i + 1) % total));
+      prevBtn && prevBtn.addEventListener('click', () => show((i - 1 + total) % total));
+
+      let at = setInterval(() => show((i + 1) % total), 4500);
+      const sliderEl = document.getElementById('hero-ap-slider');
+      sliderEl && sliderEl.addEventListener('mouseenter', () => clearInterval(at));
+      sliderEl && sliderEl.addEventListener('mouseleave', () => at = setInterval(() => show((i + 1) % total), 4500));
+
+      show(0);
+    });
+  </script>
+</body>
+</html>

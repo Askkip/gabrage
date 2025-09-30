@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - SpaceReclaim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2563eb',
+              secondary: '#1e40af',
+              accent: '#3b82f6',
+              dark: '#1f2937',
+              light: '#f3f4f6',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .price-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background-color: #3b82f6;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <i data-feather="box" class="h-8 w-8 text-primary"></i>
+            <span class="ml-2 text-xl font-bold text-dark">SpaceReclaim</span>
+          </div>
+        </div>
+        <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+          <a href="index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Accueil</a>
+          <a href="tarif.html" class="text-primary border-b-2 border-primary px-3 py-2 text-sm font-medium">Tarifs</a>
+          <a href="contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+          <a href="#" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">Devis Gratuit</a>
+        </div>
+        <div class="-mr-2 flex items-center md:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+        <a href="tarif.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Tarifs</a>
+        <a href="contact.html" class="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        <a href="#" class="bg-primary text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary">Devis Gratuit</a>
+      </div>
+    </div>
+</div>
+    </div>
+  </nav>
+
+  <!-- Pricing Section -->
+  <div class="bg-light py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-dark">Nos Tarifs Transparents</h1>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Choisissez la formule qui correspond à vos besoins</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Basic Plan -->
+        <div class="price-card relative bg-white p-8 rounded-xl shadow-md transition-all duration-300">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-dark">Basic</h3>
+            <p class="mt-2 text-gray-600">Solution économique</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-dark">49€</span>
+              <span class="text-gray-500">/m²</span>
+            </div>
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Débarras complet</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Nettoyage standard</span>
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i data-feather="x" class="w-5 h-5 mr-2"></i>
+                <span>Valorisation des objets</span>
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i data-feather="x" class="w-5 h-5 mr-2"></i>
+                <span>Certificat de nettoyage</span>
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block w-full bg-gray-100 text-dark py-3 rounded-md text-center font-medium hover:bg-gray-200">Choisir ce plan</a>
+          </div>
+        </div>
+
+        <!-- Popular Plan -->
+        <div class="price-card relative bg-white p-8 rounded-xl shadow-md transition-all duration-300 border-2 border-primary">
+          <div class="popular-badge">POPULAIRE</div>
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-dark">Reclaim+</h3>
+            <p class="mt-2 text-gray-600">Solution tout inclus</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-dark">69€</span>
+              <span class="text-gray-500">/m²</span>
+            </div>
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Débarras complet</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Nettoyage approfondi</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Valorisation des objets (50% du profit)</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Certificat de nettoyage</span>
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block w-full bg-primary text-white py-3 rounded-md text-center font-medium hover:bg-secondary">Choisir ce plan</a>
+          </div>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="price-card relative bg-white p-8 rounded-xl shadow-md transition-all duration-300">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-dark">Premium</h3>
+            <p class="mt-2 text-gray-600">Solution haut de gamme</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-dark">99€</span>
+              <span class="text-gray-500">/m²</span>
+            </div>
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Débarras complet</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Nettoyage professionnel</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Valorisation des objets (70% du profit)</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                <span>Certificat premium + photos avant/après</span>
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block w-full bg-gray-100 text-dark py-3 rounded-md text-center font-medium hover:bg-gray-200">Choisir ce plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="mt-16 bg-white p-8 rounded-xl shadow-md">
+        <h2 class="text-2xl font-bold text-dark">Informations complémentaires</h2>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-medium text-dark">Nos engagements</h3>
+            <ul class="mt-4 space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i data-feather="check-circle" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>Pas de frais cachés - prix tout compris</span>
+              </li>
+              <li class="flex items-start">
+                <i data-feather="check-circle" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>Éco-responsable: 80% des objets recyclés ou donnés</span>
+              </li>
+              <li class="flex items-start">
+                <i data-feather="check-circle" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>Intervention en moins de 72h après devis accepté</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-dark">Options supplémentaires</h3>
+            <ul class="mt-4 space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i data-feather="plus" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>+15€/m² pour un nettoyage écologique certifié</span>
+              </li>
+              <li class="flex items-start">
+                <i data-feather="plus" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>+20€/m² pour un traitement anti-moisissures</span>
+              </li>
+              <li class="flex items-start">
+                <i data-feather="plus" class="w-5 h-5 text-primary mr-2 mt-1 flex-shrink-0"></i>
+                <span>Service de déménagement optionnel</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold">Vous avez un projet spécifique ?</h2>
+        <p class="mt-4 max-w-2xl text-xl text-blue-100 mx-auto">Obtenez un devis personnalisé gratuitement</p>
+        <div class="mt-10">
+          <a href="#" class="bg-white text-primary px-8 py-3 rounded-md text-lg font-bold hover:bg-gray-100 inline-block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">SpaceReclaim</h3>
+          <p class="text极-400">Libérateurs d'espaces depuis 2023. Professionnels du débarras, nettoyage et revalorisation.</p>
+<div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Reclaim & Nettoyage</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Pack Valorisation</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Pack Forfait Valeur</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Service SAP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Informations</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">À propos</a></li>
+            <li><a href="tarif.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-400">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+              <span>01 23 45 67 89</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+              <span>contact@spacereclaim.fr</span>
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+              <span>Paris & Île-de-France</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-800">
+        <p class="text-gray-400 text-sm text-center">© 2023 Gabrage Cleaner. Tous droits réservés.</p>
+</div>
+    </div>
+  </footer>
+  <script>feather.replace();</script>
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
