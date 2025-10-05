@@ -93,52 +93,54 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero-gradient text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-        <div class="mb-12 lg:mb-0">
-          <!-- Nouveau texte ajouté ici -->
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold italic text-blue-200 mb-4">
-            Spécialiste en nettoyage, rangement et revalorisation de garages et caves
-          </h2>
-          <!-- Texte existant -->
-          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            Reprenez vos espaces<br>On s'occupe du reste
-          </h1>
-          <p class="mt-6 text-xl text-blue-100 max-w-3xl">
-            Nous débarrassons, nettoyons, valorisons — vous gardez la valeur.
-          </p>
-          <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-gray-100">Demander un devis</a>
-            <a href="#how-it-works" class="border-2 border-white text-white px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-white hover:text-primary">Comment ça marche ?</a>
-          </div>
-        </div>
-        <div class="relative">
-          <div id="hero-ap-slider" class="relative rounded-xl overflow-hidden shadow-2xl w-full max-w-md mx-auto">
-            <div class="aspect-9-16">
-              <!-- slides: use object-fit: contain so 9:16 images are not cropped -->
-              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (2).jpg" alt="Avant après 1">
-              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (4).jpg" alt="Avant après 2">
-              <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story.jpg" alt="Avant après 3">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-30 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 p-6">
-              <span class="bg-white text-primary px-3 py-1 rounded-full text-xs font-bold">TRANSFORMATION</span>
-              <h3 class="text-white text-xl font-bold mt-2">Garage de 21m² à Paris</h3>
-              
-            </div>
-            <!-- nav -->
-            <button id="hero-ap-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
-              &#10094;
-            </button>
-            <button id="hero-ap-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
-              &#10095;
-            </button>
-          </div>
-        </div>
+<div class="hero-gradient text-white relative">
+  <!-- Image fixe pour la version PC -->
+  <div class="hidden lg:block absolute inset-0">
+    <img src="pcimg/background.png" alt="Garage avant-après" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Contenu superposé -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="text-center lg:text-left">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold italic text-blue-200 mb-4">
+        Spécialiste en nettoyage, rangement et revalorisation de garages et caves
+      </h2>
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+        Reprenez vos espaces<br>On s'occupe du reste
+      </h1>
+      <p class="mt-6 text-xl text-blue-100 max-w-3xl">
+        Nous débarrassons, nettoyons, valorisons — vous gardez la valeur.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-gray-100">Demander un devis</a>
+        <a href="#how-it-works" class="border-2 border-white text-white px-8 py-3 rounded-md text-lg font-bold text-center hover:bg-white hover:text-primary">Comment ça marche ?</a>
       </div>
     </div>
   </div>
+
+  <!-- Slider pour la version mobile -->
+  <div class="lg:hidden relative">
+    <div id="hero-ap-slider" class="relative rounded-xl overflow-hidden shadow-2xl w-full max-w-md mx-auto">
+      <div class="aspect-9-16">
+        <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (2).jpg" alt="Avant après 1">
+        <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story (4).jpg" alt="Avant après 2">
+        <img class="ap-slide" data-filename="Gray Modern Before &amp; After Interior Design Makeover Instagram Story.jpg" alt="Avant après 3">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-30 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 p-6">
+        <span class="bg-white text-primary px-3 py-1 rounded-full text-xs font-bold">TRANSFORMATION</span>
+        <h3 class="text-white text-xl font-bold mt-2">Garage de 21m² à Paris</h3>
+      </div>
+      <!-- nav -->
+      <button id="hero-ap-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
+        &#10094;
+      </button>
+      <button id="hero-ap-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-dark rounded-full p-2 shadow">
+        &#10095;
+      </button>
+    </div>
+  </div>
+</div>
 
   <!-- How It Works -->
   <div id="how-it-works" class="bg-light py-16">
